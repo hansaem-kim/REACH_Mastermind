@@ -10,3 +10,11 @@ body {
 header {
   font-size: 2rem;
 }
+
+.visible-modal {
+  display: flex;
+}
+
+.invisible-modal {
+  display: none;
+}
