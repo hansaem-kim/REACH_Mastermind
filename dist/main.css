@@ -23,8 +23,14 @@ header {
   display: flex;
 }
 
+.main-column {
+  background-color: #e7d1b7;
+  padding: 10px;
+}
+
 .secret-pattern {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .attempt-row {
@@ -48,6 +54,16 @@ header {
 
 .hole {
   background-color: #5A3300;
+}
+
+.feedback-column {
+  background-color: #e7d1b7;
+  padding: 10px;
+  padding-top: 75px;
+}
+
+.feedback {
+  margin-top: 12px;
 }
 
 .feedback-hole {
