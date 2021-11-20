@@ -1,6 +1,7 @@
 class Game {
     constructor(){
         this.pattern = [];
+        this.currentAttempt = 1;
     }
 
     generatePattern(){
@@ -18,7 +19,6 @@ class Game {
         // console.log(this.pattern);
     }
 
-    
 }
 
 export default Game;

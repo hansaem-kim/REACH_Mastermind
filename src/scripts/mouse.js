@@ -1,6 +1,6 @@
 class Mouse {
     constructor(){
-        
+        this.currentColor;
     }
 
     resetCursor() {
@@ -12,8 +12,9 @@ class Mouse {
     }
 
     changeCursor(color) {
+        this.currentColor = color;
         this.resetCursor();
-        let pointer = document.querySelector(`.${color}`);
+        let pointer = document.querySelector(`.${color}-cursor`);
         pointer.classList.remove("invisible");
 
         window.addEventListener("mousemove", cursor);
@@ -23,6 +24,7 @@ class Mouse {
             pointer.style.left = e.pageX + 'px'
         }
     }
+
 }
 
 export default Mouse;

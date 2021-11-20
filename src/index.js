@@ -19,15 +19,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
     game.generatePattern();
 
     redButton.onclick = function() {
-        mouse.changeCursor("red-cursor");
+        mouse.changeCursor("red");
     }
 
     blueButton.onclick = function() {
-        mouse.changeCursor("blue-cursor");
+        mouse.changeCursor("blue");
     }
 
     greenButton.onclick = function() {
-        mouse.changeCursor("green-cursor");
+        mouse.changeCursor("green");
     }
+
+    const holes = document.querySelectorAll(".hole");
+    holes.forEach(function(hole){
+        hole.onclick = function() {
+            if(hole.classList[1] == game.currentAttempt){
+                hole.style.backgroundColor = mouse.currentColor;
+            }
+        }
+    })
 
 })
