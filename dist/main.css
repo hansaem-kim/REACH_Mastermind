@@ -77,3 +77,53 @@ header {
 .feedback-row {
   display: flex;
 }
+
+.pegs {
+  margin-top: 20px;
+}
+
+.peg {
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.red-peg {
+  background-color: red;
+}
+
+.blue-peg {
+  background-color: blue;
+}
+
+.green-peg {
+  background-color: green;
+}
+
+.cursor {
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.invisible {
+  display: none;
+}
+
+.red-cursor {
+  background-color: red;
+}
+
+.blue-cursor {
+  background-color: blue;
+}
+
+.green-cursor {
+  background-color: green;
+}

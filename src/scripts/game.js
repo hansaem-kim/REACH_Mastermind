@@ -17,6 +17,8 @@ class Game {
         // }
         // console.log(this.pattern);
     }
+
+    
 }
 
 export default Game;
