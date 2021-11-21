@@ -31,9 +31,10 @@ class Game {
     }
 
     currentGuess(){
+        this.guess = [];
         let currentRow = document.getElementsByClassName(`hole ${this.currentAttempt}`);
         for (let i=0; i<4; i++){
-            this.guess.push(this.colorValue[currentRow[i].classList[3]]);
+            this.guess.push(this.colorValue[currentRow[i].classList[2]]);
         }
     }
 
@@ -45,6 +46,8 @@ class Game {
             console.log("good");
         } else {
             console.log('bad');
+            this.currentAttempt += 1;
+            console.log(this.currentAttempt);
         }
     }
 
