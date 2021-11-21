@@ -96,6 +96,8 @@ header {
   height: 50px;
   width: 50px;
   cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .red-peg {
@@ -108,6 +110,26 @@ header {
 
 .green-peg {
   background-color: green;
+}
+
+.khaki-peg {
+  background-color: khaki;
+}
+
+.purple-peg {
+  background-color: purple;
+}
+
+.orange-peg {
+  background-color: orange;
+}
+
+.pink-peg {
+  background-color: pink;
+}
+
+.teal-peg {
+  background-color: teal;
 }
 
 .cursor {
@@ -134,4 +156,24 @@ header {
 
 .green-cursor {
   background-color: green;
+}
+
+.khaki-cursor {
+  background-color: khaki;
+}
+
+.purple-cursor {
+  background-color: purple;
+}
+
+.orange-cursor {
+  background-color: orange;
+}
+
+.pink-cursor {
+  background-color: pink;
+}
+
+.teal-cursor {
+  background-color: teal;
 }

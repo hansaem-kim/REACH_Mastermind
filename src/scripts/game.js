@@ -4,9 +4,14 @@ class Game {
         this.guess = [];
         this.currentAttempt = 1;
         this.colorValue = {};
-        this.colorValue['red'] = 1;
-        this.colorValue['blue'] = 2;
-        this.colorValue['green'] = 3;
+        this.colorValue['red'] = '1';
+        this.colorValue['blue'] = '2';
+        this.colorValue['green'] = '3';
+        this.colorValue['khaki'] = '4';
+        this.colorValue['purple'] = '5';
+        this.colorValue['orange'] = '6';
+        this.colorValue['pink'] = '7';
+        this.colorValue['teal'] = '8';
 
     }
 
@@ -16,7 +21,7 @@ class Game {
         xmlHttp.send();
         xmlHttp.onreadystatechange=(e=>{
             let stringPattern = xmlHttp.responseText;
-            this.pattern = stringPattern.match(/[^\s]+/g);
+            this.secretPattern = stringPattern.match(/[^\s]+/g);
         });
 
         // for(let i=0; i<4; i++){
@@ -34,7 +39,9 @@ class Game {
 
     checkPattern(){
         this.currentGuess();
-        if (this.guess == this.secretPattern){
+        console.log(this.secretPattern);
+        console.log(this.guess);
+        if (JSON.stringify(this.guess) === JSON.stringify(this.secretPattern)){
             console.log("good");
         } else {
             console.log('bad');
