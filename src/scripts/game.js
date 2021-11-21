@@ -1,7 +1,13 @@
 class Game {
     constructor(){
-        this.pattern = [];
+        this.secretPattern = [];
+        this.guess = [];
         this.currentAttempt = 1;
+        this.colorValue = {};
+        this.colorValue['red'] = 1;
+        this.colorValue['blue'] = 2;
+        this.colorValue['green'] = 3;
+
     }
 
     generatePattern(){
@@ -17,6 +23,22 @@ class Game {
         //     this.pattern[i] = Math.floor(Math.random()*7)+1;
         // }
         // console.log(this.pattern);
+    }
+
+    currentGuess(){
+        let currentRow = document.getElementsByClassName(`hole ${this.currentAttempt}`);
+        for (let i=0; i<4; i++){
+            this.guess.push(this.colorValue[currentRow[i].classList[3]]);
+        }
+    }
+
+    checkPattern(){
+        this.currentGuess();
+        if (this.guess == this.secretPattern){
+            console.log("good");
+        } else {
+            console.log('bad');
+        }
     }
 
 }
