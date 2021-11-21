@@ -7,6 +7,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const game = new Game();
     const mouse = new Mouse();
 
+    const colorValue = {};
+    colorValue['red'] = '1';
+    colorValue['blue'] = '2';
+    colorValue['green'] = '3';
+    colorValue['khaki'] = '4';
+    colorValue['purple'] = '5';
+    colorValue['orange'] = '6';
+    colorValue['pink'] = '7';
+    colorValue['teal'] = '8';
+
     game.generatePattern();
 
     const startButton = document.querySelector("#start-btn");
@@ -68,6 +78,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             if(hole.classList[1] == game.currentAttempt){
                 hole.classList.add(`${mouse.currentColor}`);
                 hole.style.backgroundColor = mouse.currentColor;
+                hole.insertAdjacentHTML('afterbegin', colorValue[`${mouse.currentColor}`])
             }
         }
     });
