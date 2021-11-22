@@ -5,15 +5,13 @@ class Modal {
 
     closeModal(modal){
         const popup = document.querySelector(`#${modal}`);
-        popup.classList.add("invisible-modal");
-        popup.classList.remove("visible-modal");
-
+        popup.style.display = 'none'
+        
     }
 
     openModal(modal){
         const popup = document.querySelector(`#${modal}`);
-        popup.classList.remove("invisible-modal");
-        popup.classList.add("visible-modal");
+        popup.style.display = 'flex'
 
     }
 

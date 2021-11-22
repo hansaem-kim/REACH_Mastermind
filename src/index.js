@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     game.generatePattern();
 
-    const startButton = document.querySelector("#start-btn");
+    const startButton = document.querySelector(".start-btn");
     const checkButton = document.querySelector(".check-btn");
 
     const redButton = document.querySelector(".red-peg");
