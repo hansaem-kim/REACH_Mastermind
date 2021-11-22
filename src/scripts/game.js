@@ -43,32 +43,47 @@ class Game {
         //okayGuess is for correct number but incorrect spot.
         let perfectGuess = 0;
         let okayGuess = 0;
+        let dummyCode = [];
+        let dummyGuess = [];
+
+        for (let i=0; i<4; i++){
+            dummyGuess[i] = this.guess[i];
+            dummyCode[i] = this.secretPattern[i];
+        }
 
         //for the guess & secret code pattern, change the number to 0 to indicate that it's already used.
         for (let i=0; i<4; i++){
-            if (this.guess[i] == this.secretPattern[i]){
+            if (dummyGuess[i] == dummyCode[i]){
                 perfectGuess += 1;
-                this.guess[i]=0;
-                this.secretPattern[i]=0;
+                dummyGuess[i]=0;
+                dummyCode[i]=0;
             }
         }
 
         for (let i=0; i<4; i++){
-            if (this.guess[i] == 0) continue;
+            if (dummyGuess[i] == 0) continue;
             for (let j=0; j<4; j++){
-                if (this.guess[i] == this.secretPattern[j]){
+                if (dummyGuess[i] == dummyCode[j]){
                     okayGuess += 1;
-                    this.secretPattern[j] = 0;
+                    dummyCode[j] = 0;
                     break;
                 }
             }
+        }
+
+        let feedbackHoles = document.getElementsByClassName(`feedback-hole ${this.currentAttempt}`)
+        for (let i=0; i<perfectGuess; i++){
+            feedbackHoles[i].style.backgroundColor = 'red';
+        }
+        for (let i=perfectGuess; i<perfectGuess+okayGuess; i++){
+            feedbackHoles[i].style.backgroundColor = 'white';
         }
     }
 
     checkPattern(){
         this.currentGuess();
-        console.log(this.secretPattern);
-        console.log(this.guess);
+        this.giveFeedback();
+
         if (JSON.stringify(this.guess) === JSON.stringify(this.secretPattern)){
             console.log("good");
         } else {
