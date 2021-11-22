@@ -38,6 +38,33 @@ class Game {
         }
     }
 
+    giveFeedback(){
+        //perfectGuess is for correct number & correct spot.
+        //okayGuess is for correct number but incorrect spot.
+        let perfectGuess = 0;
+        let okayGuess = 0;
+
+        //for the guess & secret code pattern, change the number to 0 to indicate that it's already used.
+        for (let i=0; i<4; i++){
+            if (this.guess[i] == this.secretPattern[i]){
+                perfectGuess += 1;
+                this.guess[i]=0;
+                this.secretPattern[i]=0;
+            }
+        }
+
+        for (let i=0; i<4; i++){
+            if (this.guess[i] == 0) continue;
+            for (let j=0; j<4; j++){
+                if (this.guess[i] == this.secretPattern[j]){
+                    okayGuess += 1;
+                    this.secretPattern[j] = 0;
+                    break;
+                }
+            }
+        }
+    }
+
     checkPattern(){
         this.currentGuess();
         console.log(this.secretPattern);
