@@ -23,11 +23,6 @@ class Game {
             let stringPattern = xmlHttp.responseText;
             this.secretPattern = stringPattern.match(/[^\s]+/g);
         });
-
-        // for(let i=0; i<4; i++){
-        //     this.pattern[i] = Math.floor(Math.random()*7)+1;
-        // }
-        // console.log(this.pattern);
     }
 
     currentGuess(){

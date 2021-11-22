@@ -10,6 +10,13 @@ class Modal {
 
     }
 
+    openModal(modal){
+        const popup = document.querySelector(`#${modal}`);
+        popup.classList.remove("invisible-modal");
+        popup.classList.add("visible-modal");
+
+    }
+
 }
 
 export default Modal;
