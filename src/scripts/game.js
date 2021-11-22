@@ -1,3 +1,5 @@
+import Modal from './modal.js';
+
 class Game {
     constructor(){
         this.secretPattern = [];
@@ -76,15 +78,19 @@ class Game {
     }
 
     checkPattern(){
+        const modal = new Modal();
         this.currentGuess();
         this.giveFeedback();
 
         if (JSON.stringify(this.guess) === JSON.stringify(this.secretPattern)){
-            console.log("good");
+            modal.openModal('win-modal');
         } else {
-            console.log('bad');
             this.currentAttempt += 1;
             console.log(this.currentAttempt);
+        }
+
+        if (this.currentAttempt === 11) {
+            modal.openModal('lose-modal');
         }
     }
 

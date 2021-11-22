@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     
     startButton.onclick = function() {
         modal.closeModal("welcome-modal");
+        const board = document.querySelector(`.gameboard`);
+        board.classList.remove("invisible");
     };
 
     //Remove the peg on cursor when mouse is over the check button.
