@@ -88,6 +88,7 @@ class Game {
 
     checkPattern(){
         const modal = new Modal();
+        modal.shake();
         this.currentGuess();
         this.giveFeedback();
 

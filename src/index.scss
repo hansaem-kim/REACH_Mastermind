@@ -48,6 +48,7 @@ header {
 }
 
 .gameboard {
+    position: relative;
     display: flex;
     background-color: #B9CC81;
     border-radius: 5px;
@@ -175,7 +176,8 @@ header {
     border: none;
     height: 50px;
     width: 50px;
-    position: absolute;
+    position: fixed;
+    right: 100%;
     transform: translate(-50%, -50%);
     pointer-events: none;
     color: white;
