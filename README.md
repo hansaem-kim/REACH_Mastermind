@@ -7,6 +7,14 @@
 ## Background
 This version of mastermind game was implemented as a coding challenge for LinkedIn's REACH program.
 
+## Getting Started
+1) Clone this repo onto your local machine. ```git clone https://github.com/hansaem-kim/REACH_Mastermind.git```
+2) Navigate to your local repo directory and find ```index.html```
+3) Copy the path of ```index.html``` and paste it on your browser
+4) Enjoy the game :)
+
+*If you are unable to clone the repo, you can simply [click here](https://hansaem-kim.github.io/REACH_Mastermind/) to play.
+
 ## Functionality
 * When users click a peg, the mouse cursor changes to the peg color to easily identify which peg they have picked.
 * The gameboard shakes when users attempt to check their guess without filling every position.
