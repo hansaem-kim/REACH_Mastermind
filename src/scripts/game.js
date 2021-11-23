@@ -7,7 +7,7 @@ class Game {
         this.currentAttempt = 1;
         this.colorValue = {};
         this.colorValue['tomato'] = '1';
-        this.colorValue['blue'] = '2';
+        this.colorValue['lightskyblue'] = '2';
         this.colorValue['green'] = '3';
         this.colorValue['khaki'] = '4';
         this.colorValue['purple'] = '5';
@@ -15,6 +15,15 @@ class Game {
         this.colorValue['pink'] = '7';
         this.colorValue['teal'] = '8';
 
+    }
+    setupBoard(){
+        const board = document.querySelector(`.gameboard`);
+        board.classList.remove("invisible");
+        const body = document.body;
+        body.style.backgroundColor = "#1F3B4D"
+        let title = document.createElement('header');
+        title.prepend("MASTERMIND")
+        body.prepend(title);
     }
 
     generatePattern(){
@@ -82,16 +91,35 @@ class Game {
         this.currentGuess();
         this.giveFeedback();
 
+        console.log(this.guess);
+
         if (JSON.stringify(this.guess) === JSON.stringify(this.secretPattern)){
             modal.openModal('win-modal');
         } else {
             this.currentAttempt += 1;
-            console.log(this.currentAttempt);
         }
 
         if (this.currentAttempt === 11) {
             modal.openModal('lose-modal');
         }
+    }
+
+    reset(){
+        let holes = document.getElementsByClassName(`hole`);
+        let feedbackHoles = document.getElementsByClassName(`feedback-hole`)
+        for (let i=0; i<holes.length; i++){
+            holes[i].style.backgroundColor = '#FEFFCA';
+            holes[i].innerHTML='';
+            holes[i].classList.remove(`${holes[i].classList[2]}`)
+            feedbackHoles[i].style.backgroundColor = '#748500';
+        }
+        this.generatePattern();
+        this.currentAttempt = 1;
+        this.guess = [];
+
+        const modal = new Modal();
+        modal.closeModal('win-modal');
+        modal.closeModal('lose-modal');
     }
 
 }

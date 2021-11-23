@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     game.generatePattern();
 
     const startButton = document.querySelector(".start-btn");
+    const newGameButtons = document.querySelectorAll(".new-game-btn");
     const checkButton = document.querySelector(".check-btn");
 
     const redButton = document.querySelector(".tomato-peg");
@@ -33,14 +34,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
     
     startButton.onclick = function() {
         modal.closeModal("welcome-modal");
-        const board = document.querySelector(`.gameboard`);
-        board.classList.remove("invisible");
-        const body = document.body;
-        body.style.backgroundColor = "#1F3B4D"
-        let title = document.createElement('header');
-        title.prepend("MASTERMIND")
-        body.prepend(title);
+        game.setupBoard();
     };
+
+    newGameButtons.forEach(btn => {
+        btn.onclick = function() {
+            game.reset();
+            console.log('new game')
+        }
+    });
 
     //Remove the peg on cursor when mouse is over the check button.
     checkButton.onmouseover = function() {

@@ -11,16 +11,23 @@ body {
   background-color: #FDE166;
 }
 
+.filter {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
 button {
   font-family: "Orbitron", sans-serif;
 }
 
 .check-btn {
-  margin-top: 50px;
+  margin-top: 70px;
   width: 60px;
   height: 40px;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #FEFFCA;
+  color: #748500;
 }
 
 .new-game-btn {
@@ -111,7 +118,7 @@ header {
 .pegs {
   margin-top: 20px;
   padding-top: 10px;
-  border-top: 3px solid #1F3B4D;
+  border-top: 3px solid #748500;
 }
 
 .peg {
@@ -241,8 +248,10 @@ header {
   cursor: pointer;
 }
 
-#win-modal {
+#win-modal, #lose-modal {
   position: absolute;
+  top: 20%;
+  z-index: 10;
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
