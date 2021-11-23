@@ -89,6 +89,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     holes.forEach(function(hole){
         hole.onclick = function() {
             if(hole.classList[1] == game.currentAttempt && mouse.currentColor){
+                //remove the previous 'color' classname if it exist.
+                if (hole.classList.length > 2){
+                    hole.classList.remove(`${hole.classList[2]}`);
+                }
                 hole.classList.add(`${mouse.currentColor}`);
                 hole.style.backgroundColor = mouse.currentColor;
                 hole.innerHTML = colorValue[`${mouse.currentColor}`];
