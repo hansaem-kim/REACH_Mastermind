@@ -52,6 +52,7 @@ class Game {
         let dummyCode = [];
         let dummyGuess = [];
 
+        //create the copy of guess and secret-code so that they are not over written.
         for (let i=0; i<4; i++){
             dummyGuess[i] = this.guess[i];
             dummyCode[i] = this.secretPattern[i];
@@ -102,6 +103,11 @@ class Game {
             modal.openModal('win-modal');
         } else {
             this.currentAttempt += 1;
+
+            //move the row-indicator to the next row.
+            const rowIndicator = document.querySelector('.row-indicator');
+            let rowIndicatorPos = window.getComputedStyle(rowIndicator).top;
+            rowIndicator.style.top = `${Number(rowIndicatorPos.slice(0,-2))-60}px`
         }
 
         if (this.currentAttempt === 11) {
@@ -111,12 +117,19 @@ class Game {
 
     reset(){
         let holes = document.getElementsByClassName(`hole`);
-        let feedbackHoles = document.getElementsByClassName(`feedback-hole`)
+        let feedbackHoles = document.getElementsByClassName(`feedback-hole`);
+        const rowIndicator = document.querySelector('.row-indicator');
+
         for (let i=0; i<holes.length; i++){
+            //reset the pegs on holes.
             holes[i].style.backgroundColor = '#FEFFCA';
             holes[i].innerHTML='';
             holes[i].classList.remove(`${holes[i].classList[2]}`)
             feedbackHoles[i].style.backgroundColor = '#748500';
+            
+            //reset the row-indicator to the first row.
+            rowIndicator.style.top = '645px';
+            
         }
         this.generatePattern();
         this.currentAttempt = 1;

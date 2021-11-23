@@ -226,6 +226,16 @@ header {
   background-color: teal;
 }
 
+.row-indicator {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #39FF14;
+  position: absolute;
+  top: 645px;
+  left: -15px;
+}
+
 #welcome-modal {
   height: 220px;
   width: 550px;
