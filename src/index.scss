@@ -94,7 +94,7 @@ header {
 
 .feedback-column {
     padding: 10px;
-    padding-top: 75px;
+    padding-top: 48px;
 }
 
 .feedback {
@@ -232,6 +232,19 @@ header {
     top: 645px;
     left: -15px;
 
+}
+
+.timer {
+    position: relative;
+    width: 60px;
+    bottom: 20px;
+    padding: 5px;
+    color: #748500;
+    background-color: #FEFFCA;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    
 }
 
 #welcome-modal {

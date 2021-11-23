@@ -1,4 +1,5 @@
 import Modal from './modal.js';
+import Timer from './timer.js';
 
 class Game {
     constructor(){
@@ -94,6 +95,7 @@ class Game {
 
     checkPattern(){
         const modal = new Modal();
+
         this.currentGuess();
         if (this.guess.includes(undefined)){
             modal.shake();

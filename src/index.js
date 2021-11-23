@@ -1,11 +1,13 @@
 import Game from "./scripts/game.js";
 import Modal from "./scripts/modal.js"
 import Mouse from "./scripts/mouse.js";
+import Timer from "./scripts/timer.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const modal = new Modal();
     const game = new Game();
     const mouse = new Mouse();
+    const timer = new Timer();
 
     const colorValue = {};
     colorValue['tomato'] = '1';
@@ -35,12 +37,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
     startButton.onclick = function() {
         modal.closeModal("welcome-modal");
         game.setupBoard();
+        timer.startTimer();
     };
 
     newGameButtons.forEach(btn => {
         btn.onclick = function() {
             game.reset();
-            console.log('new game')
+            timer.resetTimer();
+            timer.startTimer();
         }
     });
 
