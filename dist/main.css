@@ -285,3 +285,53 @@ header {
   border: 5px dotted #D0FEFE;
   background-color: #1F3B4D;
 }
+
+@media only screen and (max-height: 750px) {
+  header {
+    font-size: 1.6rem;
+  }
+
+  .hole, .secret-ball, .peg, .cursor {
+    width: 30px;
+    height: 30px;
+  }
+
+  .feedback-hole {
+    width: 12px;
+    height: 12px;
+  }
+
+  .timer {
+    width: 36px;
+    font-size: 0.7rem;
+  }
+
+  .main-column {
+    padding-right: 0px;
+  }
+
+  .feedback-column {
+    padding-top: 40px;
+  }
+
+  .feedback {
+    margin-top: 2.2px;
+    margin-bottom: 5.9px;
+  }
+
+  .check-btn {
+    width: 52px;
+    height: 32px;
+    font-size: 0.7rem;
+    margin-top: 45px;
+  }
+
+  .row-indicator {
+    top: 435px;
+  }
+}
+@media only screen and (max-height: 690px) {
+  body {
+    max-height: 680px;
+  }
+}

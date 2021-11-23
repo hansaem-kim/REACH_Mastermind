@@ -113,7 +113,13 @@ class Game {
             //move the row-indicator to the next row.
             const rowIndicator = document.querySelector('.row-indicator');
             let rowIndicatorPos = window.getComputedStyle(rowIndicator).top;
-            rowIndicator.style.top = `${Number(rowIndicatorPos.slice(0,-2))-60}px`
+            if (window.innerHeight > 750){
+                rowIndicator.style.top = `${Number(rowIndicatorPos.slice(0,-2))-60}px`
+            } else {
+                rowIndicator.style.top = `${Number(rowIndicatorPos.slice(0,-2))-40}px`
+
+            }
+            
         }
 
         if (this.currentAttempt === 11) {
@@ -134,7 +140,11 @@ class Game {
             feedbackHoles[i].style.backgroundColor = '#748500';
             
             //reset the row-indicator to the first row.
-            rowIndicator.style.top = '645px';
+            if (window.innerHeight > 750){
+                rowIndicator.style.top = '645px';
+            } else {
+                rowIndicator.style.top = '435px';
+            }
             
         }
         this.generatePattern();
