@@ -90,4 +90,16 @@ The code below shows how I implemented a logic to provide a feedback on each gue
     }
 ```
 
+## Future Work
+#### Use the timer to create different levels
+* Easy: 3 minutes per game or 20 seconds per row.
+* Medium: 2 minutes per game or 12 seconds per row.
+* Hard: 1 minute per game or 6 seconds per row.
 
+#### Implement sound to prevent user error or just for more entertainment 😁
+* Play sound when users try invalid moves.
+* Add a background music for entertainment.
+
+#### Create Leaderboard
+* Post top 10 scores on the leaderboard.
+* Users can enter their username.
