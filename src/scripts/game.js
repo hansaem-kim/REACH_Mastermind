@@ -88,8 +88,12 @@ class Game {
 
     checkPattern(){
         const modal = new Modal();
-        modal.shake();
         this.currentGuess();
+        if (this.guess.includes(undefined)){
+            modal.shake();
+            return;
+        }
+
         this.giveFeedback();
 
         console.log(this.guess);

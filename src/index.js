@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const holes = document.querySelectorAll(".hole");
     holes.forEach(function(hole){
         hole.onclick = function() {
-            if(hole.classList[1] == game.currentAttempt){
+            if(hole.classList[1] == game.currentAttempt && mouse.currentColor){
                 hole.classList.add(`${mouse.currentColor}`);
                 hole.style.backgroundColor = mouse.currentColor;
-                hole.insertAdjacentHTML('afterbegin', colorValue[`${mouse.currentColor}`])
+                hole.insertAdjacentHTML('afterbegin', colorValue[`${mouse.currentColor}`]);
             }
         }
     });
