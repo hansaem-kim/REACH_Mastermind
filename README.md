@@ -1,6 +1,6 @@
 # Mastermind
 
-### Live Site: ...
+### Live Site: [Mastermind](https://hansaem-kim.github.io/REACH_Mastermind/)
 
 ![Screenshot](/mastermind_screenshot.png)
 
