@@ -26,6 +26,7 @@ class Game {
         body.prepend(title);
     }
 
+    //use random generator API to randomly select 4 numbers from 1-8 (duplicate numbers are allowed).
     generatePattern(){
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", 'https://www.random.org/integers/?num=4&min=1&max=8&col=1&base=10&format=plain&rnd=new');
@@ -36,6 +37,7 @@ class Game {
         });
     }
 
+    //convert user's graphical input to array of numbers.
     currentGuess(){
         this.guess = [];
         let currentRow = document.getElementsByClassName(`hole ${this.currentAttempt}`);
@@ -59,6 +61,7 @@ class Game {
         }
 
         //for the guess & secret code pattern, change the number to 0 to indicate that it's already used.
+        //check for correct number at correct position.
         for (let i=0; i<4; i++){
             if (dummyGuess[i] == dummyCode[i]){
                 perfectGuess += 1;
@@ -67,6 +70,7 @@ class Game {
             }
         }
 
+        //check for correct number at wrong position.
         for (let i=0; i<4; i++){
             if (dummyGuess[i] == 0) continue;
             for (let j=0; j<4; j++){
@@ -78,6 +82,7 @@ class Game {
             }
         }
 
+        //fill the feedback holes given the number of perfect guess and okay guess.
         let feedbackHoles = document.getElementsByClassName(`feedback-hole ${this.currentAttempt}`)
         for (let i=0; i<perfectGuess; i++){
             feedbackHoles[i].style.backgroundColor = 'red';
@@ -97,8 +102,7 @@ class Game {
 
         this.giveFeedback();
 
-        console.log(this.guess);
-
+        //check if the user has gussed correctly & if the game is over.
         if (JSON.stringify(this.guess) === JSON.stringify(this.secretPattern)){
             modal.openModal('win-modal');
         } else {

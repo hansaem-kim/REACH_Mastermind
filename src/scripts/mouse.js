@@ -3,6 +3,7 @@ class Mouse {
         this.currentColor;
     }
 
+    //reset the cursor to the default shape.
     resetCursor() {
         let pointers = document.querySelectorAll('.cursor');
         pointers.forEach(function(pointer) {
@@ -11,6 +12,7 @@ class Mouse {
 
     }
 
+    //change the cursor to the selected peg.
     changeCursor(color) {
         this.currentColor = color;
         this.resetCursor();
