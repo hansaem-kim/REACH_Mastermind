@@ -100,8 +100,6 @@ class Game {
         const modal = new Modal();
         this.currentGuess();
 
-        console.log(this.guess);
-
         //shake the board if the user has not filled the entire row.
         if (this.guess.includes(undefined)){
             modal.shake();
