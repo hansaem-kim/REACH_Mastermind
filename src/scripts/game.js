@@ -18,6 +18,7 @@ class Game {
 
     }
     setupBoard(){
+        //show the board & title.
         const board = document.querySelector(`.gameboard`);
         board.classList.remove("invisible");
         const body = document.body;
@@ -83,7 +84,7 @@ class Game {
             }
         }
 
-        //fill the feedback holes given the number of perfect guess and okay guess.
+        //fill the feedback holes given the number of perfect guess(red) and okay guess(white).
         let feedbackHoles = document.getElementsByClassName(`feedback-hole ${this.currentAttempt}`)
         for (let i=0; i<perfectGuess; i++){
             feedbackHoles[i].style.backgroundColor = 'red';
@@ -95,8 +96,9 @@ class Game {
 
     checkPattern(){
         const modal = new Modal();
-
         this.currentGuess();
+
+        //shake the board if the user has not filled the entire row.
         if (this.guess.includes(undefined)){
             modal.shake();
             return;
@@ -121,7 +123,7 @@ class Game {
             }
             
         }
-
+        //display game-over message.
         if (this.currentAttempt === 11) {
             modal.openModal('lose-modal');
         }

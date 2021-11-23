@@ -6,6 +6,8 @@ class Modal {
         const popup = document.querySelector(`#${modal}`);
         const background = document.querySelectorAll("body > div:not(.modal)");
         popup.style.display = 'none';
+
+        //remove the blurs on background.
         background.forEach (ele=>{
             ele.classList.remove("filter");
         });
@@ -15,6 +17,8 @@ class Modal {
         const popup = document.querySelector(`#${modal}`);
         const background = document.querySelectorAll("body > div:not(.modal)");
         popup.style.display = 'flex';
+
+        //blurs the background.
         background.forEach (ele=>{
             ele.classList.add("filter");
         });
@@ -24,6 +28,7 @@ class Modal {
         const gameboard = document.querySelector(".gameboard");
         let time = 0;
         const shaking = setInterval(()=> {
+            //randomly select the dx and dy for shaking effect.
             gameboard.style.top = `${Math.random()*5}px`;
             gameboard.style.left = `${Math.random()*5}px`;
 
