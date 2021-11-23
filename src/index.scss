@@ -3,7 +3,9 @@ body {
     background-color: #F7F7F7;
     font-family: 'Orbitron', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FDE166;
 }
 
 button {
@@ -20,7 +22,7 @@ button {
 
 .new-game-btn {
     width: 100px;
-    height: 40px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -40,10 +42,11 @@ header {
 
 .gameboard {
     display: flex;
+    background-color: #B9CC81;
+    border-radius: 5px;
 }
 
 .main-column {
-    background-color: #e7d1b7;
     padding: 10px;
 }
 
@@ -70,7 +73,7 @@ header {
 }
 
 .secret-ball {
-    background-color: #f5e342;
+    background-color: #748500;
     color: white;
     display: flex;
     align-items: center;
@@ -78,11 +81,10 @@ header {
 }
 
 .hole {
-    background-color: #5A3300;
+    background-color: #FEFFCA;
 }
 
 .feedback-column {
-    background-color: #e7d1b7;
     padding: 10px;
     padding-top: 75px;
 }
@@ -96,7 +98,7 @@ header {
     width: 20px;
     margin: 2px;
     border-radius: 50%;
-    background-color: #5A3300;
+    background-color: #748500;
 }
 
 .feedback-row {
@@ -105,9 +107,13 @@ header {
 
 .pegs {
     margin-top: 20px;
+    padding-top: 10px;
+    border-top: 3px solid #1F3B4D;
 }
 
 .peg {
+    padding: 0px;
+    margin: 3px;
     border-radius: 50%;
     border: none;
     height: 50px;
@@ -117,12 +123,12 @@ header {
     font-size: 1.2rem;
 }
 
-.red-peg {
-    background-color: red;
+.tomato-peg {
+    background-color: tomato;
 }
 
-.blue-peg {
-    background-color: blue;
+.lightskyblue-peg {
+    background-color: lightskyblue;
 }
 
 .green-peg {
@@ -176,12 +182,12 @@ header {
     display: none;
 }
 
-.red-cursor {
-    background-color: red;
+.tomato-cursor {
+    background-color: tomato;
 }
 
-.blue-cursor {
-    background-color: blue;
+.lightskyblue-cursor {
+    background-color: lightskyblue;
 }
 
 .green-cursor {
@@ -236,7 +242,7 @@ header {
 
 #win-modal {
     position: absolute;
-    display: flex;
+    // display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid black;

@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const mouse = new Mouse();
 
     const colorValue = {};
-    colorValue['red'] = '1';
-    colorValue['blue'] = '2';
+    colorValue['tomato'] = '1';
+    colorValue['lightskyblue'] = '2';
     colorValue['green'] = '3';
     colorValue['khaki'] = '4';
     colorValue['purple'] = '5';
@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const startButton = document.querySelector(".start-btn");
     const checkButton = document.querySelector(".check-btn");
 
-    const redButton = document.querySelector(".red-peg");
-    const blueButton = document.querySelector(".blue-peg");
+    const redButton = document.querySelector(".tomato-peg");
+    const blueButton = document.querySelector(".lightskyblue-peg");
     const greenButton = document.querySelector(".green-peg");
     const khakiButton = document.querySelector(".khaki-peg");
     const purpleButton = document.querySelector(".purple-peg");
@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         modal.closeModal("welcome-modal");
         const board = document.querySelector(`.gameboard`);
         board.classList.remove("invisible");
+        const body = document.body;
+        body.style.backgroundColor = "#1F3B4D"
+        let title = document.createElement('header');
+        title.prepend("MASTERMIND")
+        body.prepend(title);
     };
 
     //Remove the peg on cursor when mouse is over the check button.
@@ -49,10 +54,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     //Attach the peg on cursor. Users can see which peg they are placing.
     redButton.onclick = function() {
-        mouse.changeCursor("red");
+        mouse.changeCursor("tomato");
     };
     blueButton.onclick = function() {
-        mouse.changeCursor("blue");
+        mouse.changeCursor("lightskyblue");
     };
     greenButton.onclick = function() {
         mouse.changeCursor("green");

@@ -6,7 +6,7 @@ class Game {
         this.guess = [];
         this.currentAttempt = 1;
         this.colorValue = {};
-        this.colorValue['red'] = '1';
+        this.colorValue['tomato'] = '1';
         this.colorValue['blue'] = '2';
         this.colorValue['green'] = '3';
         this.colorValue['khaki'] = '4';
