@@ -43,8 +43,10 @@ class Game {
     currentGuess(){
         this.guess = [];
         let currentRow = document.getElementsByClassName(`hole ${this.currentAttempt}`);
+
+        //find the colors on the row and convert the color to the corresponding number.
         for (let i=0; i<4; i++){
-            this.guess.push(this.colorValue[currentRow[i].classList[2]]);
+            this.guess.push(this.colorValue[currentRow[i].classList[currentRow[i].classList.length-1]]);
         }
     }
 
@@ -97,6 +99,8 @@ class Game {
     checkPattern(){
         const modal = new Modal();
         this.currentGuess();
+
+        console.log(this.guess);
 
         //shake the board if the user has not filled the entire row.
         if (this.guess.includes(undefined)){

@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             if(hole.classList[1] == game.currentAttempt && mouse.currentColor){
                 hole.classList.add(`${mouse.currentColor}`);
                 hole.style.backgroundColor = mouse.currentColor;
-                hole.insertAdjacentHTML('afterbegin', colorValue[`${mouse.currentColor}`]);
+                hole.innerHTML = colorValue[`${mouse.currentColor}`];
             }
         }
     });
